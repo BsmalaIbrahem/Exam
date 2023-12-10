@@ -79,6 +79,7 @@ return [
             ],
             'mutation' => [
                 'logout' => App\GraphQL\Mutations\Auth\LogoutMutation::class,
+                'updateProfile' =>  App\GraphQL\Mutations\Profile\UpdateProfileMutation::class,
             ],
             // The types only available in this schema
             'types' => [
@@ -102,7 +103,6 @@ return [
             'mutation' => [
                 'signUp' => App\GraphQL\Mutations\Auth\SignUpMutation::class,
                 'login'  => App\GraphQL\Mutations\Auth\LoginMutation::class,
-                'logout' => App\GraphQL\Mutations\Auth\LogoutMutation::class,
             ],
             // The types only available in this schema
             'types' => [

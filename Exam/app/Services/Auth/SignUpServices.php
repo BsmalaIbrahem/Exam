@@ -3,7 +3,7 @@
 namespace App\Services\Auth;
 
 use App\Models\User;
-use App\Services\Validation\SignUpValidation;
+use App\Validation\SignUpValidation;
 use GraphQL\Error\Error;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +24,9 @@ class SignUpServices
     private function validate($data)
     {
         $validator = (new SignUpValidation)->validate($data);
-        if($validator->fails())
+        if($validator->fails()){
             return new Error($validator->getMessageBag()->first());
+        }
         return true;
     }
 

@@ -80,6 +80,7 @@ return [
             'mutation' => [
                 'logout' => App\GraphQL\Mutations\Auth\LogoutMutation::class,
                 'updateProfile' =>  App\GraphQL\Mutations\Profile\UpdateProfileMutation::class,
+                'updatePassword' => App\GraphQL\Mutations\Profile\UpdatePasswordMutation::class,
             ],
             // The types only available in this schema
             'types' => [

@@ -5,6 +5,8 @@ namespace App\GraphQL\Mutations\Exam;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
+use App\Services\Exam\ExamService;
+use App\GraphQL\Inputs\QuestionInput;
 
 class AddExamMutation extends Mutation
 {
@@ -33,8 +35,8 @@ class AddExamMutation extends Mutation
             ],
             'status' => [
                 'name' => 'status',
-                'type' => Type::boolean(),
-                'rules' => ['required', 'boolean'],
+                'type' => Type::string(),
+                'rules' => ['required'],
             ],
             'time' => [
                 'name' => 'time',
@@ -46,10 +48,9 @@ class AddExamMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => ['required', 'integer'],
             ],
-            'questions' =>[
-                'name' => 'questions',
-                'type' => Type::listOf(GraphQL::type('Question')),
-                'rules' => 'required',
+            'questions' => [
+                'type' => Type::listOf(GraphQL::type('QuestionInput')),
+                'rules' => ['required']
             ]
 
         ];
@@ -57,6 +58,7 @@ class AddExamMutation extends Mutation
 
     public function resolve($root, $args)
     {
-        //
+        (new ExamService)->addExam($args);
+        return ['message' => 'successfully created'];
     }
 }

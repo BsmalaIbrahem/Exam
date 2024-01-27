@@ -81,10 +81,13 @@ return [
                 'logout' => App\GraphQL\Mutations\Auth\LogoutMutation::class,
                 'updateProfile' =>  App\GraphQL\Mutations\Profile\UpdateProfileMutation::class,
                 'updatePassword' => App\GraphQL\Mutations\Profile\UpdatePasswordMutation::class,
+                'addExam' => App\GraphQL\Mutations\Exam\AddExamMutation::class,
             ],
             // The types only available in this schema
             'types' => [
                 // ExampleType::class,
+                "QuestionInput" => App\GraphQL\Inputs\QuestionInput::class,
+                'OptionInput' =>  App\GraphQL\Inputs\OptionInput::class,
             ],
 
             // Laravel HTTP middleware

@@ -9,7 +9,16 @@ class Exam extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'user_id', 'status', 'time', 'grade', 'is_public'];
+    protected $fillable = [
+        'title',
+        'description',
+        'user_id',
+        'status',
+        'time',
+        'grade',
+        'is_public',
+        'availability_period'
+    ];
 
     public function questions()
     {

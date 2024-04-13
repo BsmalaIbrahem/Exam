@@ -51,6 +51,10 @@ class AddExamMutation extends Mutation
             'questions' => [
                 'type' => Type::listOf(GraphQL::type('QuestionInput')),
                 'rules' => ['required']
+            ],
+            'availability_period' => [
+                'type' => Type::string(),
+                'rules' => ['nullable'],
             ]
 
         ];

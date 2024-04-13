@@ -17,7 +17,6 @@ class OptionType extends GraphQLTyp
     {
         return [
             'body' => Type::string(),
-            'is_answer' => Type::boolean(),
         ];
     }
 }

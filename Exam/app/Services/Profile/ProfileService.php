@@ -26,4 +26,9 @@ class ProfileService
         }
         return true;
     }
+
+    public function addUserName($user_name)
+    {
+        User::find(auth()->user()->id)->update(['user_name' => $user_name]);
+    }
 }

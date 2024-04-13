@@ -28,6 +28,9 @@ class UserType extends GraphQLTyp {
             'email' => [
                 'type' => Type::nonNull(Type::string()),
             ],
+            'user_name' => [
+                'type' => Type::nonNull(Type::string()),
+            ]
         ];
     }
 }

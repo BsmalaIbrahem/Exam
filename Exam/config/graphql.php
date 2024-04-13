@@ -91,13 +91,23 @@ return [
             ],
 
             // Laravel HTTP middleware
-            'middleware' => ['auth:api'],
+            'middleware' => ['auth:api', 'userName'],
 
             // Which HTTP methods to support; must be given in UPPERCASE!
             'method' => ['GET', 'POST'],
 
             // An array of middlewares, overrides the global ones
             'execution_middleware' => null,
+        ],
+
+        'userName' => [
+            'query' => [],
+            'mutation' => [
+                'addUserName' => App\GraphQL\Mutations\Profile\AddUserNameMutation::class,
+            ],
+            'middleware' => ['auth:api'],
+            'methods' => ['get', 'post']
+
         ],
 
         'auth' => [

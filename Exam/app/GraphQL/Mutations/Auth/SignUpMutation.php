@@ -37,6 +37,11 @@ class SignUpMutation extends Mutation
                 'type' => Type::string(),
                 'rules' => ['required', 'email'],
             ],
+            'user_name' => [
+                'name' => 'user_name',
+                'type' => Type::string(),
+                'rules' => ['required', 'string']
+            ],
             'password' => [
                 'name' => 'password',
                 'type' => Type::string(),

@@ -17,7 +17,7 @@ class Exam extends Model
         'time',
         'grade',
         'is_public',
-        'availability_period'
+        'availability_period' 
     ];
 
     public function questions()

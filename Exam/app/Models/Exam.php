@@ -18,7 +18,6 @@ class Exam extends Model
         'grade',
         'is_public',
         'availability_period'
-        "he"
     ];
 
     public function questions()
